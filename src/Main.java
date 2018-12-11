@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class Main{
-public static void main(String[]args){
+public static void main(String[]args) {
     ArrayList dan = new ArrayList();
     String d = "D";
     String a = "A";
@@ -17,31 +17,36 @@ public static void main(String[]args){
     dan.add(n);
     System.out.println(dan.toString());
     //Max tal for int
-    int j = (int) Math.pow(2,31);
+    int j = (int) Math.pow(2, 31);
     System.out.println(j);
 
-    String [] names = {"Dan","Mads","Hans"};
+    String[] names = {"Dan", "Mads", "Hans"};
 
     System.out.println(names[1]);
 
     //Find(x) method (uden metode) kan også nemt laves om til at finde Int, double osv...
     Scanner sc = new Scanner(System.in);
-    System.out.println("Input the desired seach word");
-    String x = sc.next();
+    String x;
+    do {
 
-    for (int i = 0; i <names.length; i++)
-    {
-        if (x.equalsIgnoreCase(names[i]))
+        System.out.println("Input the desired seach word (Write \"Exit\" to exit)");
+        x = sc.next();
+        if (x.equalsIgnoreCase("Exit"))
         {
-            System.out.println("The word \"" + x + "\" occurs at index: " + i);
+            System.out.println("DONE registered EXITING NOW");
             break;
         }
-
-        if (i==names.length-1)
+        for (int i = 0; i < names.length; i++)
         {
-            System.out.println("The word \"" + x + "\" does not occur in the array");
+            if (x.equalsIgnoreCase(names[i])) {
+                System.out.println("The word \"" + x + "\" occurs at index: " + i);
+                break;
+            } else if (i == names.length - 1) {
+                System.out.println("The word \"" + x + "\" does not occur in the array");
+            }
         }
 
-    }
+    } while (x != "DONE"); //Blev nød til at bruge break, inden i koden da den hele tiden efter loppet resetter x, og derfor aldrig bliver "Done" i while loopet
+
 //Find(x) metode slut
 }}
