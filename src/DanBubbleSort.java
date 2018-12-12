@@ -3,13 +3,12 @@ import java.util.ArrayList;
 public class DanBubbleSort {
     public static void main(String[] args) {
         MyTimerDan.start();
-        int [] intArray = {1,6,9,3,3,6,8,9,2,1,4,7,9};
+        //int [] intArray = {1,6,9,3,3,6,8,9,2,1,4,7,9};
 
-        ArrayList xd = new ArrayList();
-        for (int p = 0; p < 1000; p++) {
-            xd.add(Math.random()*100);
+        int [] intArray = new int[100000];
+        for (int p = 0; p < intArray.length; p++) {
+            intArray[p] = 0+ ((int)(Math.random()*100));
         }
-
 
 
 
@@ -29,9 +28,9 @@ public class DanBubbleSort {
         }
 
         MyTimerDan.stop();
-        for (int l = 0; l < intArray.length ; l++) {
-            System.out.println(intArray[l]+"\n");
-        }
+       // for (int l = 0; l < intArray.length ; l++) {
+            //System.out.println(intArray[l]+"\n");
+        //}
 
     }
 
