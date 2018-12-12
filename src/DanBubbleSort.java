@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+
+public class DanBubbleSort {
+    public static void main(String[] args) {
+        MyTimerDan.start();
+        int [] intArray = {1,6,9,3,3,6,8,9,2,1,4,7,9};
+
+        ArrayList xd = new ArrayList();
+        for (int p = 0; p < 1000; p++) {
+            xd.add(Math.random()*100);
+        }
+
+
+
+
+        int temp;
+        for (int i = 0; i < intArray.length; i++)
+        {
+
+            for (int j = 0; j < intArray.length; j++)
+            {
+              if (intArray[i]<intArray[j])
+              {
+                  temp = intArray[i];
+                  intArray[i] = intArray[j];
+                  intArray[j] = temp;
+              }
+            }
+        }
+
+        MyTimerDan.stop();
+        for (int l = 0; l < intArray.length ; l++) {
+            System.out.println(intArray[l]+"\n");
+        }
+
+    }
+
+}
