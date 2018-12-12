@@ -69,5 +69,10 @@ public class CompressDan {
 
         System.out.println(compressed.toString());
 
+        int nonCompressedLenght = numberString.length();
+        int CompressedLenght = compressed.length();
+        double procentFald = 100-(((double)CompressedLenght/(double) nonCompressedLenght)*100);
+        System.out.println(procentFald+"% røg af den uComprimerede");
+
     }
 }
